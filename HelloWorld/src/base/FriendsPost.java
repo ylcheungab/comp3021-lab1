@@ -9,4 +9,12 @@ public class FriendsPost extends Post {
 		super(date, content);
 		friend = user;
 	}
+
+	public User getFriend() {
+		return friend;
+	}
+
+	public void setFriend(User friend) {
+		this.friend = friend;
+	}
 }

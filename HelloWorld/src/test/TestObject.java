@@ -4,7 +4,6 @@ import java.util.Date;
 
 import base.User;
 import base.FriendsPost;
-import base.Post;
 
 public class TestObject {
 	
