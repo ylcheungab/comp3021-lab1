@@ -6,15 +6,28 @@ public class Post {
 	private Date date;
 	private String content;
 	
+	/**
+	 * Constructor
+	 * @param date
+	 * @param content
+	 */
 	public Post(Date date, String content){
 		this.date = date;
 		this.content = content;
 	}
 	
+	/**
+	 * Content getter
+	 * @return
+	 */
 	public String getContent(){
 		return this.content;
 	}
 	
+	/**
+	 * Content setter
+	 * @param content
+	 */
 	public void setContent(String content){
 		this.content = content;
 	}
@@ -53,6 +66,9 @@ public class Post {
 		return true;
 	}
 	
+	/**
+	 * changes as overriding the equals()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -70,6 +86,8 @@ public class Post {
 	public boolean contains(String keyword){
 		return this.getContent().contains(keyword);
 	}
+	
+	
 }
 
 
