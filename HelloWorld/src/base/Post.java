@@ -37,7 +37,7 @@ public class Post {
 	 */
 	@Override
 	public String toString() {
-		return "Post [date=" + this.date + ", content=" + this.content + "]";
+		return "Posted on " + this.date + ", content:" + this.content;
 	}
 	
 	/**
