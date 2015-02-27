@@ -7,6 +7,22 @@ public class Post {
 	private String content;
 	
 	/**
+	 * date getter
+	 * @return
+	 */
+	public Date getDate() {
+		return date;
+	}
+	
+	/**
+	 * date setter
+	 * @param date
+	 */
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	/**
 	 * Constructor
 	 * @param date
 	 * @param content
@@ -16,6 +32,7 @@ public class Post {
 		this.content = content;
 	}
 	
+
 	/**
 	 * Content getter
 	 * @return
@@ -37,7 +54,7 @@ public class Post {
 	 */
 	@Override
 	public String toString() {
-		return "Posted on " + this.date + ", content:" + this.content;
+		return "Posted on " + this.date + ", content: " + this.content;
 	}
 	
 	/**

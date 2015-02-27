@@ -54,8 +54,11 @@ public class Blog {
 	 * @param post
 	 */
 	public void post(Post p){
-		if(this.allPosts.add(p))
-			System.out.println("The post is added.");
+		if(this.allPosts.add(p)){
+			System.out.println("A new post: ");
+			System.out.println(p.getDate());
+			System.out.println(p.getContent());
+		}
 		else
 			System.out.println("Adding post failure.");
 	}
@@ -74,7 +77,8 @@ public class Blog {
 	 * @param index
 	 */
 	public void delete(int index){
-		if( index < 0 || index > this.allPosts.size())
+		index -= 1;
+		if( index < 0 || index >= this.allPosts.size())
 			System.out.println("Invalid index.");
 		else{
 			this.allPosts.remove(index);
@@ -121,4 +125,6 @@ public class Blog {
 		return user + "'s allPosts:" + allPosts;
 	}
 	
+
+
 }
