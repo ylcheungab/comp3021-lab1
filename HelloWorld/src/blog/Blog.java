@@ -14,7 +14,7 @@ public class Blog {
 	 */
 	public Blog (User user){
 		this.user = user;
-		this.allPosts = null;
+		this.allPosts = new ArrayList<>();
 	}
 	
 	/**
@@ -55,8 +55,8 @@ public class Blog {
 	 */
 	public void post(Post p){
 		if(this.allPosts.add(p)){
-			System.out.println("A new post: ");
-			System.out.println(p.getDate());
+			System.out.println("A new post");
+			System.out.println("At: " + p.getDate());
 			System.out.println(p.getContent());
 		}
 		else
@@ -67,8 +67,12 @@ public class Blog {
 	 * list all posts in the blog
 	 */
 	public void list(){
-		for (Post p:this.allPosts){
-			System.out.println(p.toString());
+		if(!allPosts.isEmpty()){
+			for (Post p:this.allPosts){
+				System.out.println(p.toString());
+			}
+		}else{
+			System.out.println("There has no posts here.");
 		}
 	}
 	

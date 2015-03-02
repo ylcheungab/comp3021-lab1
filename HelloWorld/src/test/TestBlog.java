@@ -14,7 +14,7 @@ public class TestBlog {
 	 */
 	public String getInput(){
 		String line = "";
-		System.out.print("Enter the promt: ");
+		System.out.print("Enter the prompt: ");
 		try{
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			line = br.readLine();
@@ -24,13 +24,13 @@ public class TestBlog {
 		return line;
 	}
 	
-	public String getcontent(String p){
-		if(p.startsWith("post")){
-			p.substring(5);
-		}else if(p.startsWith("delete")){
-			p.substring(7);
-		}
-		return p;
+	public static String getcontent(String p){
+		if(p.startsWith("post"))
+			return p.substring(5);
+		else if(p.startsWith("delete"))
+			return p.substring(7);
+		else 
+			return p;
 	}
 	
 	public static void main(String[] args){
@@ -44,14 +44,12 @@ public class TestBlog {
 			if (prompt.startsWith("list"))
 				myBlog.list();
 			else if(prompt.startsWith("post")){
-				//TODO: get content
-
 				Date date = new Date();
-				Post post = new Post(date, prompt.getcontent);
+				String p = getcontent(prompt);
+				Post post = new Post(date, p);
 				myBlog.post(post);
 			}else if(prompt.startsWith("delete")){
-				//TODO: get content
-				
+				int index = Integer.parseInt(getcontent(prompt));
 				myBlog.delete(index);
 			}else
 				System.out.println("Error message. Logout please type 'exit'.");
