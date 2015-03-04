@@ -14,7 +14,7 @@ public class Blog {
 	 */
 	public Blog (User user){
 		this.user = user;
-		this.allPosts = new ArrayList<>();
+		this.allPosts = new ArrayList<Post>();
 	}
 	
 	/**
@@ -68,8 +68,8 @@ public class Blog {
 	 */
 	public void list(){
 		if(!allPosts.isEmpty()){
-			for (Post p:this.allPosts){
-				System.out.println(p.toString());
+			for (int i = 0; i < allPosts.size(); i++){
+				System.out.println("Post [" + i + "]: " + allPosts.get(i).toString());
 			}
 		}else{
 			System.out.println("There has no posts here.");
@@ -81,12 +81,11 @@ public class Blog {
 	 * @param index
 	 */
 	public void delete(int index){
-		index -= 1;
 		if( index < 0 || index >= this.allPosts.size())
 			System.out.println("Invalid index.");
 		else{
+			System.out.println("Post " + allPosts.get(index).getContent() + " deleted.");
 			this.allPosts.remove(index);
-			System.out.println("Post deleted.");
 		}
 	}
 
