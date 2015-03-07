@@ -2,25 +2,9 @@ package base;
 
 import java.util.Date;
 
-public class Post {
+public class Post implements Comparable<Post>{
 	private Date date;
 	private String content;
-	
-	/**
-	 * date getter
-	 * @return
-	 */
-	public Date getDate() {
-		return date;
-	}
-	
-	/**
-	 * date setter
-	 * @param date
-	 */
-	public void setDate(Date date) {
-		this.date = date;
-	}
 	
 	/**
 	 * Constructor
@@ -32,7 +16,21 @@ public class Post {
 		this.content = content;
 	}
 	
-
+	/**
+	 * date getter
+	 * @return
+	 */
+	public Date getDate() {
+		return date;
+	}
+	/**
+	 * date setter
+	 * @param date
+	 */
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
 	/**
 	 * Content getter
 	 * @return
@@ -40,7 +38,6 @@ public class Post {
 	public String getContent(){
 		return this.content;
 	}
-	
 	/**
 	 * Content setter
 	 * @param content
@@ -104,6 +101,15 @@ public class Post {
 		return this.getContent().contains(keyword);
 	}
 	
+	/**
+	 * the value 0 if the argument Date is equal to this Date;
+	 * a value less than 0 if this Date is before the Date argument;
+	 * and a value greater than 0 if this Date is after the Date argument
+	 */
+	@Override
+	public int compareTo(Post p){
+		return this.date.compareTo(p.date);
+	}
 	
 }
 

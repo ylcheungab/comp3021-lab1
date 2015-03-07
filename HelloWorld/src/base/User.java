@@ -1,6 +1,6 @@
 package base;
 
-public class User {
+public class User implements Comparable<User>{
 	private int ID;
 	private String user;
 	private String email;
@@ -24,7 +24,6 @@ public class User {
 	public int getID() {
 		return ID;
 	}
-
 	/**
 	 * ID setter
 	 * @param iD
@@ -40,7 +39,6 @@ public class User {
 	public String getUser() {
 		return user;
 	}
-
 	/**
 	 * User setter
 	 * @param user
@@ -56,7 +54,6 @@ public class User {
 	public String getEmail() {
 		return email;
 	}
-
 	/**
 	 * Email setter
 	 * @param email
@@ -65,5 +62,21 @@ public class User {
 		this.email = email;
 	}
 	
-	
+	/**
+	 * Comparing this.ID and u.ID
+	 */
+	@Override
+	public int compareTo(User u){
+		if (this.ID > u.ID)
+			return 1;
+		else if (this.ID < u.ID)
+			return -1;
+		else
+			return 0;
+	}
+
+	@Override
+	public String toString() {
+		return "User [ID=" + ID + ", user=" + user + ", email=" + email + "]";
+	}
 }
