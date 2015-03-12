@@ -1,9 +1,19 @@
 package base;
 
-public class User implements Comparable<User>{
+import java.io.Serializable;
+
+public class User implements Comparable<User>, Serializable {
 	private int ID;
 	private String user;
 	private String email;
+	
+	public void load(String filepath){
+		
+	}
+	
+	public void save(String filepath){
+		
+	}
 	
 	/**
 	 * Constructor

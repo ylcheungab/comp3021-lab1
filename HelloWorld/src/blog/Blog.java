@@ -1,5 +1,6 @@
 package blog;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -9,9 +10,17 @@ import base.*;
  * @author YatLaam
  *
  */
-public class Blog {
+public class Blog implements Serializable{
 	private User user;
 	private ArrayList<Post> allPosts;
+	
+	public void load(String filepath){
+		
+	}
+	
+	public void save(String filepath){
+		
+	}
 	
 	/**
 	 * Constructor
