@@ -7,14 +7,6 @@ public class User implements Comparable<User>, Serializable {
 	private String user;
 	private String email;
 	
-	public void load(String filepath){
-		
-	}
-	
-	public void save(String filepath){
-		
-	}
-	
 	/**
 	 * Constructor
 	 * @param ID

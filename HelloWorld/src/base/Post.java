@@ -7,14 +7,7 @@ public class Post implements Comparable<Post>, Serializable {
 	private Date date;
 	private String content;
 	
-	public void load(String filepath){
-		
-	}
-	
-	public void save(String filepath){
-		
-	}
-	
+
 	/**
 	 * Constructor
 	 * @param date

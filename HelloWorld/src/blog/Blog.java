@@ -1,5 +1,11 @@
 package blog;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,11 +21,29 @@ public class Blog implements Serializable{
 	private ArrayList<Post> allPosts;
 	
 	public void load(String filepath){
-		
+		try{
+			FileInputStream fs = new FileInputStream(filepath);
+			ObjectInputStream is = new ObjectInputStream(fs);
+			@SuppressWarnings("unchecked")
+			ArrayList<Post> allPosts = (ArrayList<Post>) is.readObject();
+			this.setAllPosts(allPosts);
+			is.close();
+		} catch (FileNotFoundException ex){
+			System.out.println("tracking filepath error.");
+		} catch (Exception ex){
+			ex.printStackTrace();
+		}
 	}
 	
 	public void save(String filepath){
-		
+		try{
+			FileOutputStream fs = new FileOutputStream (filepath);
+			ObjectOutputStream os = new ObjectOutputStream (fs);
+			os.writeObject(this.getAllPosts());
+			os.close();
+		} catch (IOException ex){
+			ex.printStackTrace();
+		}
 	}
 	
 	/**
