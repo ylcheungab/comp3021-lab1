@@ -7,7 +7,6 @@ public class Post implements Comparable<Post>, Serializable {
 	private Date date;
 	private String content;
 	
-
 	/**
 	 * Constructor
 	 * @param date
