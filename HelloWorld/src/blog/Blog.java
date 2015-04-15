@@ -163,7 +163,12 @@ public class Blog implements Serializable{
 
 	@Override
 	public String toString() {
-		return user + "'s allPosts:" + allPosts;
+		String s = "";
+		for (Post p: allPosts){
+			s += p.toString();
+			s += '\n';
+		}
+		return user + "'s allPosts:" + '\n' + s;
 	}
 	
 	public void search(int month, String someone){
